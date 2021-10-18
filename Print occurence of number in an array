@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int size,item,i,count=0;
+    cin>>size;
+    int arr[size];
+    for(i=0;i<size;i++){
+        cin>>arr[i];
+    }
+    cin>>item;
+    for(i=0;i<size;i++){
+        if(arr[i]==item){
+            cout<<"Element is found at "<<i+1<<" position"<<endl;
+            count++;
+        }
+    }
+    if(count>0){
+        cout<<"Element is found "<<count<<" times";
+    }
+    else{
+        cout<<"Element is not found";
+    }
+    return 0;
+}
+
+
+
+
+
