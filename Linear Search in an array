@@ -1,0 +1,29 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int size,item,i;
+    bool flag=false;
+    cin>>size;
+    int arr[size];
+    for(i=0;i<size;i++){
+        cin>>arr[i];
+    }
+    cin>>item;
+    for(i=0;i<size;i++){
+        if(arr[i]==item){
+            flag=true;
+            break;
+        }
+    }
+    if(flag==true){
+        cout<<"Element found at "<<i+1;
+    }
+    else{
+        cout<<"Element is not found";
+    }
+    return 0;
+}
