@@ -1,0 +1,26 @@
+//In inserion sort first we check the correct position of an elemnt then right shift to other elemnt for a required position and at that position we placed our elemnt.
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int arr[]={8,6,4,20,24,2,10,12};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    int i,j,target;
+    for(i=1;i<size;i++){
+        target=arr[i];
+        j=i-1;
+        while(j>=0 && arr[j]>target){
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=target;
+    }
+   for(int i=0;i<size;i++){
+       cout<<arr[i]<<" ";
+   }
+    return 0;
+}
