@@ -1,0 +1,41 @@
+//time complexity -O(nlogn)
+
+#include <iostream>
+using namespace std;
+void swap(int *a, int *b){
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+}
+int partition(int arr[], int low, int high){ //Divide-conquer
+   int pivot=arr[high]; 
+   int swapindex=low-1;
+    int i=0;
+    for(i=low;i<=high-1;i++){
+        if(arr[i]<pivot){
+                swapindex++;
+                swap(&arr[i],&arr[swapindex]);
+        }
+    }
+    swap(&arr[i],&arr[swapindex+1]);
+    return swapindex+1;
+}
+void quickSort(int arr[],int low, int high){
+    if(low<high){
+        int indexPI= partition(arr,low,high);
+        quickSort(arr,low,indexPI-1);
+        quickSort(arr,indexPI+1,high);
+    }
+}
+
+int main()
+{
+   int arr[]={70,90,10,30,50,20,60};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   quickSort(arr,0,size-1);
+   for(int i=0;i<size;i++){
+       cout<<arr[i]<<" ";
+   }
+
+    return 0;
+}
